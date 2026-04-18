@@ -6,10 +6,10 @@ const StatesGrid = () => {
   const { activeState } = useSelector((state) => state.state)
 
   return (
-    <div className="flex items-center justify-center m-6">
+    <div className="flex items-center justify-center mx-2 sm:mx-6">
       <div
-        className="max-w-4xl grid gap-6 p-6 bg-gray-100 border-2 border-slate-500 rounded-lg mt-12"
-        style={{ gridTemplateColumns: 'repeat(5, minmax(120px, 1fr))' }}
+        className="w-full max-w-4xl grid gap-2 sm:gap-4 md:gap-6 p-3 sm:p-4 md:p-6 bg-gray-100 border-2 border-slate-500 rounded-lg mt-6 sm:mt-12"
+        style={{ gridTemplateColumns: 'repeat(5, minmax(0, 1fr))' }}
       >
         {states.map((state) => (
           <div

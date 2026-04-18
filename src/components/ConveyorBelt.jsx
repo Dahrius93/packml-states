@@ -61,7 +61,7 @@ const ConveyorBelt = () => {
   const isMoving = speed !== null
 
   return (
-    <div className="flex flex-col items-center mt-8 mb-4 select-none">
+    <div className="flex flex-col items-center mt-6 mb-4 px-2 sm:px-6 w-full select-none">
       <p
         className={`text-xs font-bold uppercase tracking-widest mb-2 ${labelColor}`}
       >
@@ -69,7 +69,7 @@ const ConveyorBelt = () => {
       </p>
 
       {/* Conveyor frame */}
-      <div className="relative w-[600px] h-20 bg-gray-700 rounded-lg overflow-hidden border-4 border-gray-800 shadow-lg">
+      <div className="relative w-full max-w-[600px] h-14 sm:h-16 md:h-20 bg-gray-700 rounded-lg overflow-hidden border-4 border-gray-800 shadow-lg">
         {/* Belt stripes */}
         <div
           className={`absolute inset-0 flex items-center`}
@@ -114,7 +114,7 @@ const ConveyorBelt = () => {
       </div>
 
       {/* Wheels / rollers below */}
-      <div className="flex w-[560px] justify-between mt-1 px-2">
+      <div className="flex w-full max-w-[600px] justify-between mt-1 px-2">
         {Array.from({ length: 8 }).map((_, i) => (
           <div
             key={i}

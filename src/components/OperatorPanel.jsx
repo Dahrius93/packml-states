@@ -14,8 +14,8 @@ const OperatorPanel = () => {
   const dispatch = useDispatch()
 
   return (
-    <div className="flex items-center justify-center ">
-      <div className="inline-flex flex-row items-center justify-center gap-4 mt-12 p-4 bg-gray-200 border-2 border-slate-500 rounded-lg">
+    <div className="flex items-center justify-center px-2">
+      <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mt-6 sm:mt-12 p-3 sm:p-4 bg-gray-200 border-2 border-slate-500 rounded-lg w-full max-w-lg sm:max-w-none sm:w-auto">
         <Button
           bgColor="bg-white"
           name="Start"

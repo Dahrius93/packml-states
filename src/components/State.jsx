@@ -1,15 +1,12 @@
 const State = ({ color, name, activeState }) => {
+  const base = `flex items-center justify-center w-full min-h-8 sm:min-h-10 md:min-h-12 rounded-lg sm:rounded-xl px-1 py-1 ${color}`
   return activeState === name ? (
-    <div
-      className={`flex flex-row items-center justify-center w-36 h-12 rounded-xl ${color} border-4 border-slate-700`}
-    >
-      <h1 className="text-lg text-bold">{name}</h1>
+    <div className={`${base} border-2 sm:border-4 border-slate-700`}>
+      <h1 className="text-[10px] sm:text-sm md:text-base font-bold text-center leading-tight">{name}</h1>
     </div>
   ) : (
-    <div
-      className={`flex flex-row items-center justify-center w-36 h-12 rounded-xl ${color}`}
-    >
-      <h1 className="text-lg">{name}</h1>
+    <div className={base}>
+      <h1 className="text-[10px] sm:text-sm md:text-base text-center leading-tight">{name}</h1>
     </div>
   )
 }
