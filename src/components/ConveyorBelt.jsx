@@ -26,19 +26,19 @@ function getBeltMode(activeState) {
 
 const modeConfig = {
   fast: {
-    speed: '2s',
+    speed: '4s',
     color: 'bg-blue-400',
     label: 'EXECUTING',
     labelColor: 'text-blue-700',
   },
   slow: {
-    speed: '4s',
+    speed: '8s',
     color: 'bg-green-400',
     label: 'STARTING-STOPPING',
     labelColor: 'text-green-700',
   },
   veryslow: {
-    speed: '10s',
+    speed: '16s',
     color: 'bg-red-500',
     label: 'ABORTING',
     labelColor: 'text-red-700',
