@@ -6,22 +6,24 @@ const StatesGrid = () => {
   const { activeState } = useSelector((state) => state.state)
 
   return (
-    <div
-      className="grid gap-4 p-6"
-      style={{ gridTemplateColumns: 'repeat(5, minmax(120px, 1fr))' }}
-    >
-      {states.map((state) => (
-        <div
-          key={state.id}
-          style={{ gridColumn: state.col, gridRow: state.row }}
-        >
-          <State
-            name={state.name}
-            color={state.color}
-            activeState={activeState}
-          />
-        </div>
-      ))}
+    <div className="flex items-center justify-center m-6">
+      <div
+        className="max-w-4xl grid gap-6 p-6 bg-gray-100 border-2 border-slate-500 rounded-lg mt-12"
+        style={{ gridTemplateColumns: 'repeat(5, minmax(120px, 1fr))' }}
+      >
+        {states.map((state) => (
+          <div
+            key={state.id}
+            style={{ gridColumn: state.col, gridRow: state.row }}
+          >
+            <State
+              name={state.name}
+              color={state.color}
+              activeState={activeState}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

@@ -5,6 +5,8 @@ import {
   start,
   stop,
   abort,
+  hold,
+  suspend,
   transitioningExecute,
 } from '../features/state/stateSlice'
 
@@ -12,13 +14,12 @@ const OperatorPanel = () => {
   const dispatch = useDispatch()
 
   return (
-    <>
-      <h3>Operator Panel</h3>
-      <div className="flex flex-row min-w-0 h-32 W-32  items-center justify-center gap-4 mt-4 bg-gray-200 ">
+    <div className="flex items-center justify-center ">
+      <div className="inline-flex flex-row items-center justify-center gap-4 mt-12 p-4 bg-gray-200 border-2 border-slate-500 rounded-lg">
         <Button
           bgColor="bg-white"
           name="Start"
-          textColor="text-black"
+          textColor="text-slate-800"
           callBack={() => dispatch(start())}
         />
         <Button
@@ -30,8 +31,14 @@ const OperatorPanel = () => {
         <Button
           bgColor="bg-blue-500"
           name="Reset"
-          textColor="text-black"
+          textColor="text-slate-800"
           callBack={() => dispatch(reset())}
+        />
+        <Button
+          bgColor="bg-neutral-100"
+          name="SC"
+          textColor="text-slate-800"
+          callBack={() => dispatch(transitioningExecute())}
         />
         <Button
           bgColor="bg-red-500"
@@ -39,16 +46,20 @@ const OperatorPanel = () => {
           textColor="text-yellow"
           callBack={() => dispatch(abort())}
         />
-        <Button bgColor="bg-slate-800" name="hold" textColor="text-white" />
-        <Button bgColor="bg-slate-800" name="sus" textColor="text-white" />
         <Button
           bgColor="bg-slate-800"
-          name="SC"
+          name="hold"
           textColor="text-white"
-          callBack={() => dispatch(transitioningExecute())}
+          callBack={() => dispatch(hold())}
+        />
+        <Button
+          bgColor="bg-slate-800"
+          name="sus"
+          textColor="text-white"
+          callBack={() => dispatch(suspend())}
         />
       </div>
-    </>
+    </div>
   )
 }
 

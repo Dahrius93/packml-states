@@ -53,11 +53,48 @@ const stateSlice = createSlice({
       if (activeState === 'Stopping') {
         state.activeState = 'Stopped'
       }
+      if (activeState === 'Holding') {
+        state.activeState = 'Held'
+      }
+      if (activeState === 'Suspending') {
+        state.activeState = 'Suspended'
+      }
+      if (activeState === 'Un-Holding') {
+        state.activeState = 'Execute'
+      }
+      if (activeState === 'Un-Suspending') {
+        state.activeState = 'Execute'
+      }
+    },
+    hold: (state) => {
+      const { activeState } = state
+      if (activeState === 'Execute') {
+        state.activeState = 'Holding'
+      }
+      if (activeState === 'Held') {
+        state.activeState = 'Un-Holding'
+      }
+    },
+    suspend: (state) => {
+      const { activeState } = state
+      if (activeState === 'Execute') {
+        state.activeState = 'Suspending'
+      }
+      if (activeState === 'Suspended') {
+        state.activeState = 'Un-Suspending'
+      }
     },
   },
 })
 
-export const { reset, start, stop, abort, transitioningExecute } =
-  stateSlice.actions
+export const {
+  reset,
+  start,
+  stop,
+  abort,
+  transitioningExecute,
+  hold,
+  suspend,
+} = stateSlice.actions
 
 export default stateSlice.reducer

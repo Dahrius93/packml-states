@@ -18,6 +18,6 @@ export const states = [
   { id: 14, name: 'Stopped', color: 'bg-amber-200', col: 1, row: 4 },
   { id: 13, name: 'Stopping', color: 'bg-green-200', col: 2, row: 4 },
   { id: 15, name: 'Clearing', color: 'bg-green-200', col: 3, row: 4 },
-  { id: 17, name: 'Aborted', color: 'bg-amber-200', col: 4, row: 4 },
-  { id: 16, name: 'Aborting', color: 'bg-green-200', col: 5, row: 4 },
+  { id: 17, name: 'Aborted', color: 'bg-red-400', col: 4, row: 4 },
+  { id: 16, name: 'Aborting', color: 'bg-red-700', col: 5, row: 4 },
 ]
