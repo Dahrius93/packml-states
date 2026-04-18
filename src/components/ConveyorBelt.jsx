@@ -2,8 +2,8 @@ import { useSelector } from 'react-redux'
 
 const BELT_STATES = {
   fast: ['Execute', 'Holding', 'Suspending'],
-  slow: ['Starting', 'Stopping', 'Un-Holding', 'Un-Suspending'],
-  veryslow: ['Aborting'],
+  slow: ['Starting', 'Stopping', 'Un-Holding', 'Un-Suspending', 'Completing'],
+  veryslow: [''],
   stopped: [
     'Idle',
     'Complete',
@@ -13,6 +13,7 @@ const BELT_STATES = {
     'Resetting',
     'Clearing',
     'Completing',
+    'Aborting',
     'Aborted',
   ],
 }

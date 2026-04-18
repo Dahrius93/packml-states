@@ -44,6 +44,18 @@ const stateSlice = createSlice({
         state.blinkReset = false
         state.blinkStart = false
       }
+      if (activeState === 'Complete') {
+        state.activeState = 'Stopped'
+        state.blinkSC = false
+        state.blinkReset = false
+        state.blinkStart = false
+      }
+      if (activeState === 'Idle') {
+        state.activeState = 'Stopped'
+        state.blinkSC = false
+        state.blinkReset = true
+        state.blinkStart = false
+      }
     },
     abort: (state) => {
       const { activeState } = state
@@ -70,6 +82,15 @@ const stateSlice = createSlice({
       }
       if (activeState === 'Suspended') {
         state.activeState = 'Un-Suspending'
+      }
+    },
+    complete: (state) => {
+      const { activeState } = state
+      if (activeState === 'Execute') {
+        state.activeState = 'Completing'
+        state.blinkSC = true
+        state.blinkReset = false
+        state.blinkStart = false
       }
     },
     transitioningExecute: (state) => {
@@ -104,17 +125,35 @@ const stateSlice = createSlice({
         state.blinkReset = true
         state.blinkStart = false
       }
+      if (activeState === 'Completing') {
+        state.activeState = 'Complete'
+        state.blinkSC = false
+        state.blinkReset = false
+        state.blinkStart = false
+      }
       if (activeState === 'Holding') {
         state.activeState = 'Held'
+        state.blinkSC = false
+        state.blinkReset = false
+        state.blinkStart = false
       }
       if (activeState === 'Suspending') {
         state.activeState = 'Suspended'
+        state.blinkSC = false
+        state.blinkReset = false
+        state.blinkStart = false
       }
       if (activeState === 'Un-Holding') {
         state.activeState = 'Execute'
+        state.blinkSC = false
+        state.blinkReset = false
+        state.blinkStart = false
       }
       if (activeState === 'Un-Suspending') {
         state.activeState = 'Execute'
+        state.blinkSC = false
+        state.blinkReset = false
+        state.blinkStart = false
       }
     },
   },
@@ -128,6 +167,7 @@ export const {
   transitioningExecute,
   hold,
   suspend,
+  complete,
 } = stateSlice.actions
 
 export default stateSlice.reducer

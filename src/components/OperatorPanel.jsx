@@ -7,6 +7,7 @@ import {
   abort,
   hold,
   suspend,
+  complete,
   transitioningExecute,
 } from '../features/state/stateSlice'
 
@@ -66,6 +67,13 @@ const OperatorPanel = () => {
           name="sus"
           textColor="text-white"
           callBack={() => dispatch(suspend())}
+          isBlinking={false}
+        />
+        <Button
+          bgColor="bg-slate-800"
+          name="End"
+          textColor="text-white"
+          callBack={() => dispatch(complete())}
           isBlinking={false}
         />
       </div>

@@ -8,7 +8,7 @@ export const states = [
   { id: 2, name: 'Starting', color: 'bg-green-200', col: 2, row: 2 },
   { id: 3, name: 'Execute', color: 'bg-blue-300', col: 3, row: 2 },
   { id: 4, name: 'Completing', color: 'bg-green-200', col: 4, row: 2 },
-  { id: 5, name: 'Complete', color: 'bg-amber-200', col: 5, row: 2 },
+  { id: 5, name: 'Complete', color: 'bg-green-700', col: 5, row: 2 },
   // row 3
   { id: 6, name: 'Resetting', color: 'bg-green-200', col: 1, row: 3 },
   { id: 12, name: 'Un-Suspending', color: 'bg-green-200', col: 2, row: 3 },
