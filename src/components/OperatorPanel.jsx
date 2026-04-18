@@ -1,5 +1,5 @@
 import Button from './Button'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import {
   reset,
   start,
@@ -12,6 +12,9 @@ import {
 
 const OperatorPanel = () => {
   const dispatch = useDispatch()
+  const { blinkReset, blinkStart, blinkSC } = useSelector(
+    (state) => state.state,
+  )
 
   return (
     <div className="flex items-center justify-center px-2">
@@ -21,42 +24,49 @@ const OperatorPanel = () => {
           name="Start"
           textColor="text-slate-800"
           callBack={() => dispatch(start())}
+          isBlinking={blinkStart}
         />
         <Button
           bgColor="bg-slate-600"
           name="Stop"
           textColor="text-white"
           callBack={() => dispatch(stop())}
+          isBlinking={false}
         />
         <Button
           bgColor="bg-blue-500"
           name="Reset"
           textColor="text-slate-800"
           callBack={() => dispatch(reset())}
+          isBlinking={blinkReset}
         />
         <Button
           bgColor="bg-neutral-100"
           name="SC"
           textColor="text-slate-800"
           callBack={() => dispatch(transitioningExecute())}
+          isBlinking={blinkSC}
         />
         <Button
           bgColor="bg-red-500"
           name="E-Stop"
           textColor="text-yellow"
           callBack={() => dispatch(abort())}
+          isBlinking={false}
         />
         <Button
           bgColor="bg-slate-800"
           name="hold"
           textColor="text-white"
           callBack={() => dispatch(hold())}
+          isBlinking={false}
         />
         <Button
           bgColor="bg-slate-800"
           name="sus"
           textColor="text-white"
           callBack={() => dispatch(suspend())}
+          isBlinking={false}
         />
       </div>
     </div>
