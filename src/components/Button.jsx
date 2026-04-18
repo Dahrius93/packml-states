@@ -1,8 +1,9 @@
-const Button = ({ bgColor, name, textColor }) => {
+const Button = ({ bgColor, name, textColor, callBack }) => {
   return (
     <button
       type="button"
       className={`flex items-center justify-center w-16 h-16 rounded-full ${bgColor} border-2 border-gray-400 hover:border-gray-600 transition-colors duration-300`}
+      onClick={callBack}
     >
       <h1 className={`text-lg ${textColor}`}>{name}</h1>
     </button>

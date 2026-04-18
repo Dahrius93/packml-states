@@ -1,7 +1,10 @@
 import { states } from '../data/states'
 import State from './State'
+import { useSelector } from 'react-redux'
 
 const StatesGrid = () => {
+  const { activeState } = useSelector((state) => state.state)
+
   return (
     <div
       className="grid gap-4 p-6"
@@ -12,7 +15,11 @@ const StatesGrid = () => {
           key={state.id}
           style={{ gridColumn: state.col, gridRow: state.row }}
         >
-          <State name={state.name} color={state.color} />
+          <State
+            name={state.name}
+            color={state.color}
+            activeState={activeState}
+          />
         </div>
       ))}
     </div>
